@@ -1,6 +1,10 @@
 module Api
   class FeaturesController < ApplicationController
     def index
+
+      response.headers['Content-Type'] = 'application/vnd.api+json'
+      response.headers['cache-control'] = 'no-cache'
+      
       features = Feature.all
 
       # Filter
